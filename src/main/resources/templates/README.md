@@ -30,6 +30,10 @@ index.html?message=Hello+DS&backgroundColor=%23001122&textColor=%23ffcc00
 
 ## Build WGT
 
+OGTpen the terminal with `Alt+F12` (Windows/Linux) or `Option+F12` (macOS) and run:
+
 ```bash
-zip -r ../{{WIDGET_NAME}}.wgt config.xml index.html icon.svg
+make
 ```
+
+The finished `.wgt` file will be placed in `dist/`.
