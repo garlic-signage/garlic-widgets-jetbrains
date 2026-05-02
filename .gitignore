@@ -1,8 +1,7 @@
 build/
 .gradle/
 *.zip
-
+.intellijPlatform/
 .idea/
 *.iml
-
 .DS_Store

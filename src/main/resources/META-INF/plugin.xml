@@ -1,0 +1,15 @@
+<idea-plugin>
+    <id>com.sagiadinos.garlic.widgets.jetbrains</id>
+    <name>HTML5 Widget Creator for Digital Signage</name>
+    <vendor email="niko@sagiadinos.com" url="https://garlic-signage.com">Niko Sagiadinos</vendor>
+
+    <description>Creates Digital Signage Widget (WGT) projects from File > New Project.</description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <directoryProjectGenerator
+                implementation="com.sagiadinos.garlic.widgets.jetbrains.DsWidgetProjectGenerator"/>
+    </extensions>
+
+</idea-plugin>

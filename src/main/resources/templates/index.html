@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>{{WIDGET_TITLE}}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            background-color: var(--bg-color, #b87a20);
+            color: var(--text-color, #ffffff);
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #message {
+            font-size: 96px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="message">Hello World</div>
+
+<script src="garlic-widget.js"></script>
+<script>
+    const w = new GarlicWidget();
+
+    document.documentElement.style.setProperty('--bg-color', w.getParam('backgroundColor', '#b87a20'));
+    document.documentElement.style.setProperty('--text-color', w.getParam('textColor', '#ffffff'));
+    document.getElementById('message').textContent = w.getParam('message', 'Hello World');
+</script>
+</body>
+</html>

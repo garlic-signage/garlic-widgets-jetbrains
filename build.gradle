@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij.platform' version '2.16.0'
+}
+
+group = 'com.sagiadinos.garlic.dswidgets.ideplugin'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
+}
+
+
+// for my local testing without download: export IDE_LOCAL=/Applications/PhpStorm.app/Contents
+dependencies {
+    intellijPlatform {
+        if (System.getenv("IDE_LOCAL")) {
+            local(System.getenv("IDE_LOCAL"))
+        } else {
+            intellijIdeaUltimate('2025.1')
+        }
+    }
+}
+intellijPlatform {
+    pluginConfiguration {
+        name = 'HTML5 Widget Creator for Digital Signage'
+        version = '1.0.0'
+        ideaVersion {
+            sinceBuild = '253'
+        }
+    }
+}
+
+compileJava {
+    sourceCompatibility = '21'
+    targetCompatibility = '21'
+}
